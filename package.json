@@ -1,5 +1,5 @@
 { "name": "simplestore"
-, "description": "Simple Key Value Store in memory, a la Redis. Work in Progress"
+, "description": "Simple Key Value Store in memory, a la Redis. Work in Progress."
 , "keywords": [ "store", "keyvalue", "nodejs", "javascript" ]
 , "version": "0.0.1-alfa"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
