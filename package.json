@@ -1,0 +1,16 @@
+{ "name": "simplestore"
+, "description": "Simple Key Value Store in memory, a la Redis. Work in Progress"
+, "keywords": [ "store", "keyvalue", "nodejs", "javascript" ]
+, "version": "0.0.1-alfa"
+, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleStore.git" }
+, "main": "./lib/simplestore.js"
+, "engines": { "node": ">= 0.6.0 && < 0.9.0" }
+, "scripts": {
+    "test": "node ./test.js"
+  }
+, "dependencies": {
+  }
+, "devDependencies": {
+  }
+}
