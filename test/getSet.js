@@ -1,22 +1,25 @@
 
-var simplestore = require('../'),
-	assert = require('assert');
+var simplestore = require('../');
 
-var store = simplestore.createStore();
+exports['get undefined key'] = function (test) {
+    var store = simplestore.createStore();
 
-// Get undefined key
+    test.equal(store.get('foo'), null);
+}
 
-assert.equal(store.get('foo'), null);
+exports['simple put/get'] = function (test) {
+    var store = simplestore.createStore();
 
-// Simple put/get
+    store.put('user', 'adam');
+    test.equal(store.get('user'), 'adam');
+}
 
-store.put('user', 'adam');
-assert.equal(store.get('user'), 'adam');
+exports['put null'] = function (test) {
+    var store = simplestore.createStore();
 
-// Put null
-
-store.put('user', null);
-assert.equal(store.get('user'), null);
+    store.put('user', null);
+    test.equal(store.get('user'), null);
+}
 
 
 

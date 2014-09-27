@@ -1,12 +1,13 @@
 
-var simplestore = require('../'),
-	assert = require('assert');
+var simplestore = require('../');
 
-var store = simplestore.createStore();
+exports['set/get subkey'] = function (test) {
+    var store = simplestore.createStore();
 
-assert.equal(store.get('user:1:name'), null);
-store.put('user:1:name', 'adam');
-assert.equal(store.get('user:1:name'), 'adam');
+    test.equal(store.get('user:1:name'), null);
+    store.put('user:1:name', 'adam');
+    test.equal(store.get('user:1:name'), 'adam');
+}
 
 
 

@@ -1,24 +1,28 @@
 
-var simplestore = require('../'),
-	assert = require('assert');
+var simplestore = require('../');
 
-var store = simplestore.createStore();
+exports['get undefined entry'] = function (test) {
+    var store = simplestore.createStore();
 
-// Get undefined entry
+    test.equal(store.setGet(10), null);
+}
 
-assert.equal(store.setGet(10), null);
+exports['simple setAdd, setGet'] = function (test) {
+    var store = simplestore.createStore();
+    
+    store.setAdd(10);
+    test.ok(store.setGet(10));
+}
 
-// Simple setAdd, setGet
+exports['set and remove'] = function (test) {
+    var store = simplestore.createStore();
+    
+    store.setAdd(20);
+    test.ok(store.setGet(20));
+    store.setRemove(20);
+    test.equal(store.setGet(20), null);
+}
 
-store.setAdd(10);
-assert.ok(store.setGet(10));
-
-// set and remove
-
-store.setAdd(20);
-assert.ok(store.setGet(20));
-store.setRemove(20);
-assert.equal(store.setGet(20), null);
 
 
 

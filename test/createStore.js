@@ -1,8 +1,9 @@
 
-var simplestore = require('../'),
-	assert = require('assert');
+var simplestore = require('../');
 
-var store = simplestore.createStore();
+exports['create store'] = function (test) {
+    var store = simplestore.createStore();
 
-assert.ok(store);
+    test.ok(store);
+}
 

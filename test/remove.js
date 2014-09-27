@@ -1,23 +1,23 @@
 
-var simplestore = require('../'),
-	assert = require('assert');
+var simplestore = require('../');
 
-var store = simplestore.createStore();
+exports['simple key'] = function (test) {
+    var store = simplestore.createStore();
 
-// Simple Key
+    store.put('user', 'adam');
+    test.equal(store.get('user'), 'adam');
+    store.remove('user');
+    test.equal(store.get('user'), null);
+}
 
-store.put('user', 'adam');
-assert.equal(store.get('user'), 'adam');
-store.remove('user');
-assert.equal(store.get('user'), null);
+exports['composed key'] = function (test) {
+    var store = simplestore.createStore();
 
-// Composed Key
-
-store.put('user:1:name', 'adam');
-assert.equal(store.get('user:1:name'), 'adam');
-store.remove('user:1:name');
-assert.equal(store.get('user:1:name'), null);
-
+    store.put('user:1:name', 'adam');
+    test.equal(store.get('user:1:name'), 'adam');
+    store.remove('user:1:name');
+    test.equal(store.get('user:1:name'), null);
+}
 
 
 
